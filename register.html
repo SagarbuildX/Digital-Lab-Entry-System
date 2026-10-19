@@ -1,0 +1,1747 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Student Registration | Digital Lab Entry
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="style.css">
+
+
+    <style>
+
+        /* =====================================================
+           REGISTER PAGE
+        ===================================================== */
+
+        .register-page {
+
+            min-height: 100vh;
+
+            margin: 0;
+
+            background:
+                radial-gradient(
+                    circle at 10% 15%,
+                    rgba(96,165,250,.20),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 90% 85%,
+                    rgba(59,130,246,.16),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    135deg,
+                    #f8fbff,
+                    #eaf3ff
+                );
+
+            position: relative;
+
+            overflow-x: hidden;
+        }
+
+
+        /* =====================================================
+           BACKGROUND ORBS
+        ===================================================== */
+
+        .register-orb {
+
+            position: fixed;
+
+            border-radius: 50%;
+
+            filter: blur(70px);
+
+            pointer-events: none;
+
+            z-index: 0;
+
+            animation:
+                registerOrbFloat 8s ease-in-out infinite;
+        }
+
+
+        .register-orb-one {
+
+            width: 280px;
+
+            height: 280px;
+
+            background:
+                rgba(37,99,235,.10);
+
+            top: 80px;
+
+            left: -130px;
+        }
+
+
+        .register-orb-two {
+
+            width: 250px;
+
+            height: 250px;
+
+            background:
+                rgba(96,165,250,.13);
+
+            bottom: 60px;
+
+            right: -120px;
+
+            animation-delay: 2s;
+        }
+
+
+        @keyframes registerOrbFloat {
+
+            0%,100% {
+
+                transform:
+                    translate(0,0)
+                    scale(1);
+            }
+
+            50% {
+
+                transform:
+                    translate(20px,-25px)
+                    scale(1.08);
+            }
+
+        }
+
+
+        /* =====================================================
+           MAIN WRAPPER
+        ===================================================== */
+
+        .register-wrapper {
+
+            min-height: 100vh;
+
+            width: 100%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 45px 25px;
+
+            box-sizing: border-box;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        /* =====================================================
+           MAIN CARD
+        ===================================================== */
+
+        .register-container {
+
+            width: 100%;
+
+            max-width: 1080px;
+
+            min-height: 650px;
+
+            display: grid;
+
+            grid-template-columns:
+                38% 62%;
+
+            background:
+                rgba(255,255,255,.88);
+
+            backdrop-filter:
+                blur(18px);
+
+            -webkit-backdrop-filter:
+                blur(18px);
+
+            border:
+                1px solid
+                rgba(255,255,255,.9);
+
+            border-radius: 30px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 30px 70px
+                rgba(15,23,42,.13);
+
+            animation:
+                registerCardAppear .8s ease-out;
+        }
+
+
+        @keyframes registerCardAppear {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(25px)
+                    scale(.97);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0)
+                    scale(1);
+            }
+
+        }
+
+
+        /* =====================================================
+           LEFT BRANDING
+        ===================================================== */
+
+        .register-brand {
+
+            position: relative;
+
+            padding:
+                55px 40px;
+
+            display:
+                flex;
+
+            flex-direction:
+                column;
+
+            justify-content:
+                center;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #123c69,
+                    #2563eb
+                );
+
+            color:
+                white;
+
+            overflow:
+                hidden;
+        }
+
+
+        .register-brand::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 280px;
+
+            height: 280px;
+
+            border-radius: 50%;
+
+            border:
+                1px solid
+                rgba(255,255,255,.12);
+
+            top: -110px;
+
+            right: -100px;
+        }
+
+
+        .register-brand::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 220px;
+
+            height: 220px;
+
+            border-radius: 50%;
+
+            border:
+                1px solid
+                rgba(255,255,255,.10);
+
+            bottom: -120px;
+
+            left: -90px;
+        }
+
+
+        /* =====================================================
+           BRAND ICON
+        ===================================================== */
+
+        .register-brand-icon {
+
+            width: 72px;
+
+            height: 72px;
+
+            border-radius: 22px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background:
+                rgba(255,255,255,.13);
+
+            border:
+                1px solid
+                rgba(255,255,255,.18);
+
+            font-size: 38px;
+
+            margin-bottom: 25px;
+
+            position: relative;
+
+            z-index: 2;
+
+            box-shadow:
+                0 12px 30px
+                rgba(0,0,0,.12);
+
+            animation:
+                registerIconFloat 3s ease-in-out infinite;
+        }
+
+
+        @keyframes registerIconFloat {
+
+            0%,100% {
+
+                transform:
+                    translateY(0);
+            }
+
+            50% {
+
+                transform:
+                    translateY(-6px);
+            }
+
+        }
+
+
+        /* =====================================================
+           BRAND TEXT
+        ===================================================== */
+
+        .register-brand h1 {
+
+            font-size:
+                43px;
+
+            line-height:
+                1.08;
+
+            margin:
+                0 0 18px;
+
+            position:
+                relative;
+
+            z-index:
+                2;
+        }
+
+
+        .register-brand h1 span {
+
+            color:
+                #93c5fd;
+        }
+
+
+        .register-brand > p {
+
+            color:
+                #dbeafe;
+
+            font-size:
+                15px;
+
+            line-height:
+                1.7;
+
+            margin:
+                0 0 30px;
+
+            position:
+                relative;
+
+            z-index:
+                2;
+        }
+
+
+        /* =====================================================
+           BRAND FEATURES
+        ===================================================== */
+
+        .register-feature {
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            gap:
+                10px;
+
+            margin:
+                10px 0;
+
+            color:
+                #eff6ff;
+
+            font-size:
+                14px;
+
+            position:
+                relative;
+
+            z-index:
+                2;
+
+            transition:
+                transform .25s ease;
+        }
+
+
+        .register-feature:hover {
+
+            transform:
+                translateX(5px);
+        }
+
+
+        .register-feature-check {
+
+            width:
+                23px;
+
+            height:
+                23px;
+
+            border-radius:
+                50%;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            background:
+                rgba(255,255,255,.13);
+
+            color:
+                #bfdbfe;
+
+            font-size:
+                12px;
+
+            flex-shrink:
+                0;
+        }
+
+
+        /* =====================================================
+           RIGHT FORM AREA
+        ===================================================== */
+
+        .register-form-section {
+
+            padding:
+                48px 55px;
+
+            display:
+                flex;
+
+            flex-direction:
+                column;
+
+            justify-content:
+                center;
+
+            background:
+                rgba(255,255,255,.72);
+        }
+
+
+        .register-heading {
+
+            margin-bottom:
+                25px;
+        }
+
+
+        .register-badge {
+
+            display:
+                inline-block;
+
+            padding:
+                6px 12px;
+
+            border-radius:
+                20px;
+
+            background:
+                #eff6ff;
+
+            color:
+                #2563eb;
+
+            font-size:
+                11px;
+
+            font-weight:
+                800;
+
+            letter-spacing:
+                1px;
+
+            margin-bottom:
+                12px;
+        }
+
+
+        .register-heading h2 {
+
+            color:
+                #123c69;
+
+            font-size:
+                31px;
+
+            margin:
+                0 0 8px;
+        }
+
+
+        .register-heading p {
+
+            color:
+                #64748b;
+
+            font-size:
+                14px;
+
+            line-height:
+                1.6;
+
+            margin:
+                0;
+        }
+
+
+        /* =====================================================
+           FORM
+        ===================================================== */
+
+        .register-form-card {
+
+            width:
+                100%;
+        }
+
+
+        .register-form {
+
+            width:
+                100%;
+        }
+
+
+        .register-form-group {
+
+            margin-bottom:
+                16px;
+        }
+
+
+        .register-form-group label {
+
+            display:
+                block;
+
+            color:
+                #334155;
+
+            font-size:
+                13px;
+
+            font-weight:
+                600;
+
+            margin-bottom:
+                7px;
+        }
+
+
+        .register-form-group input {
+
+            width:
+                100%;
+
+            box-sizing:
+                border-box;
+
+            padding:
+                12px 14px;
+
+            border:
+                1px solid
+                #dbe3ef;
+
+            border-radius:
+                11px;
+
+            background:
+                #f8fafc;
+
+            color:
+                #0f172a;
+
+            font-size:
+                14px;
+
+            outline:
+                none;
+
+            transition:
+                border-color .25s ease,
+                box-shadow .25s ease,
+                background .25s ease,
+                transform .25s ease;
+        }
+
+
+        .register-form-group input:hover {
+
+            background:
+                white;
+
+            border-color:
+                #bfdbfe;
+        }
+
+
+        .register-form-group input:focus {
+
+            background:
+                white;
+
+            border-color:
+                #2563eb;
+
+            box-shadow:
+                0 0 0 4px
+                rgba(37,99,235,.10);
+
+            transform:
+                translateY(-1px);
+        }
+
+
+        .register-form-group input::placeholder {
+
+            color:
+                #94a3b8;
+        }
+
+
+        /* =====================================================
+           FORM ROW
+        ===================================================== */
+
+        .register-form-row {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap:
+                15px;
+        }
+
+
+        /* =====================================================
+           PASSWORD AREA
+        ===================================================== */
+
+        .register-password-wrapper {
+
+            position:
+                relative;
+        }
+
+
+        .register-password-wrapper input {
+
+            padding-right:
+                48px;
+        }
+
+
+        .password-toggle {
+
+            position:
+                absolute;
+
+            right:
+                10px;
+
+            top:
+                50%;
+
+            transform:
+                translateY(-50%);
+
+            width:
+                32px;
+
+            height:
+                32px;
+
+            border:
+                none;
+
+            background:
+                transparent;
+
+            cursor:
+                pointer;
+
+            border-radius:
+                8px;
+
+            font-size:
+                16px;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            transition:
+                background .2s ease;
+        }
+
+
+        .password-toggle:hover {
+
+            background:
+                #eff6ff;
+        }
+
+
+        /* =====================================================
+           PASSWORD HINT
+        ===================================================== */
+
+        .password-hint {
+
+            font-size:
+                11px;
+
+            color:
+                #94a3b8;
+
+            margin:
+                6px 0 0;
+        }
+
+
+        /* =====================================================
+           MESSAGE
+        ===================================================== */
+
+        #message {
+
+            min-height:
+                20px;
+
+            margin:
+                3px 0 10px;
+
+            font-size:
+                13px;
+
+            color:
+                #2563eb;
+
+            line-height:
+                1.5;
+        }
+
+
+        /* =====================================================
+           SUBMIT BUTTON
+        ===================================================== */
+
+        .register-submit {
+
+            width:
+                100%;
+
+            border:
+                none;
+
+            padding:
+                14px 18px;
+
+            border-radius:
+                12px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #2563eb,
+                    #1d4ed8
+                );
+
+            color:
+                white;
+
+            font-size:
+                14px;
+
+            font-weight:
+                700;
+
+            cursor:
+                pointer;
+
+            position:
+                relative;
+
+            overflow:
+                hidden;
+
+            transition:
+                transform .25s ease,
+                box-shadow .25s ease;
+        }
+
+
+        .register-submit::before {
+
+            content:
+                "";
+
+            position:
+                absolute;
+
+            top:
+                0;
+
+            left:
+                -100%;
+
+            width:
+                65%;
+
+            height:
+                100%;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    rgba(255,255,255,.25),
+                    transparent
+                );
+
+            transform:
+                skewX(-20deg);
+
+            transition:
+                left .55s ease;
+        }
+
+
+        .register-submit:hover {
+
+            transform:
+                translateY(-2px);
+
+            box-shadow:
+                0 12px 25px
+                rgba(37,99,235,.24);
+        }
+
+
+        .register-submit:hover::before {
+
+            left:
+                130%;
+        }
+
+
+        .register-submit:active {
+
+            transform:
+                translateY(0);
+        }
+
+
+        /* =====================================================
+           BOTTOM LINKS
+        ===================================================== */
+
+        .register-bottom {
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            gap:
+                5px;
+
+            flex-wrap:
+                wrap;
+
+            margin-top:
+                20px;
+
+            font-size:
+                13px;
+
+            color:
+                #64748b;
+        }
+
+
+        .register-bottom a {
+
+            color:
+                #2563eb;
+
+            text-decoration:
+                none;
+
+            font-weight:
+                700;
+
+            transition:
+                color .2s ease;
+        }
+
+
+        .register-bottom a:hover {
+
+            color:
+                #1d4ed8;
+
+            text-decoration:
+                underline;
+        }
+
+
+        .register-back-home {
+
+            display:
+                block;
+
+            width:
+                fit-content;
+
+            margin:
+                16px auto 0;
+
+            color:
+                #64748b;
+
+            text-decoration:
+                none;
+
+            font-size:
+                13px;
+
+            transition:
+                color .2s ease,
+                transform .2s ease;
+        }
+
+
+        .register-back-home:hover {
+
+            color:
+                #2563eb;
+
+            transform:
+                translateX(-3px);
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 900px) {
+
+            .register-container {
+
+                grid-template-columns:
+                    1fr;
+
+                max-width:
+                    650px;
+            }
+
+
+            .register-brand {
+
+                padding:
+                    35px 40px;
+
+                min-height:
+                    260px;
+            }
+
+
+            .register-brand h1 {
+
+                font-size:
+                    34px;
+            }
+
+
+            .register-brand > p {
+
+                margin-bottom:
+                    18px;
+            }
+
+
+            .register-feature {
+
+                display:
+                    inline-flex;
+
+                margin:
+                    5px 15px 5px 0;
+            }
+
+
+            .register-form-section {
+
+                padding:
+                    40px;
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .register-wrapper {
+
+                padding:
+                    20px 14px;
+            }
+
+
+            .register-container {
+
+                border-radius:
+                    22px;
+            }
+
+
+            .register-brand {
+
+                padding:
+                    30px 25px;
+            }
+
+
+            .register-brand-icon {
+
+                width:
+                    60px;
+
+                height:
+                    60px;
+
+                font-size:
+                    30px;
+
+                border-radius:
+                    18px;
+
+                margin-bottom:
+                    18px;
+            }
+
+
+            .register-brand h1 {
+
+                font-size:
+                    31px;
+            }
+
+
+            .register-brand > p {
+
+                font-size:
+                    13px;
+            }
+
+
+            .register-feature {
+
+                font-size:
+                    13px;
+
+                margin-right:
+                    8px;
+            }
+
+
+            .register-form-section {
+
+                padding:
+                    32px 22px;
+            }
+
+
+            .register-heading h2 {
+
+                font-size:
+                    27px;
+            }
+
+
+            .register-form-row {
+
+                grid-template-columns:
+                    1fr;
+
+                gap:
+                    0;
+            }
+
+        }
+
+
+        @media (max-width: 380px) {
+
+            .register-form-section {
+
+                padding:
+                    28px 17px;
+            }
+
+
+            .register-brand {
+
+                padding:
+                    27px 20px;
+            }
+
+        }
+
+
+        /* =====================================================
+           REDUCED MOTION
+        ===================================================== */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+
+                animation-duration:
+                    .01ms !important;
+
+                animation-iteration-count:
+                    1 !important;
+
+                transition-duration:
+                    .01ms !important;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+
+<body class="register-page">
+
+
+    <!-- BACKGROUND -->
+
+    <div
+        class="register-orb register-orb-one">
+    </div>
+
+    <div
+        class="register-orb register-orb-two">
+    </div>
+
+
+
+    <!-- MAIN -->
+
+    <main class="register-wrapper">
+
+
+        <div class="register-container">
+
+
+            <!-- =================================================
+                 LEFT BRANDING
+            ================================================= -->
+
+            <section class="register-brand">
+
+
+                <div class="register-brand-icon">
+
+                    🧪
+
+                </div>
+
+
+                <h1>
+
+                    Digital Lab
+                    <br>
+
+                    <span>
+                        Entry
+                    </span>
+
+                </h1>
+
+
+                <p>
+
+                    Smart Laboratory Entry
+                    Management System
+
+                </p>
+
+
+                <div class="register-feature">
+
+                    <span
+                        class="register-feature-check">
+
+                        ✓
+
+                    </span>
+
+                    Simple & Digital
+
+                </div>
+
+
+                <div class="register-feature">
+
+                    <span
+                        class="register-feature-check">
+
+                        ✓
+
+                    </span>
+
+                    Secure Student Access
+
+                </div>
+
+
+                <div class="register-feature">
+
+                    <span
+                        class="register-feature-check">
+
+                        ✓
+
+                    </span>
+
+                    Automatic Entry Records
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 RIGHT FORM
+            ================================================= -->
+
+            <section
+                class="register-form-section">
+
+
+                <div class="register-heading">
+
+
+                    <span
+                        class="register-badge">
+
+                        STUDENT PORTAL
+
+                    </span>
+
+
+                    <h2>
+
+                        Create your account
+
+                    </h2>
+
+
+                    <p>
+
+                        Register once to start using
+                        Digital Lab Entry.
+
+                    </p>
+
+
+                </div>
+
+
+
+                <div
+                    class="register-form-card">
+
+
+                    <form
+                        id="registrationForm"
+                        class="register-form">
+
+
+                        <!-- NAME -->
+
+                        <div
+                            class="register-form-group">
+
+                            <label
+                                for="name">
+
+                                Full Name
+
+                            </label>
+
+
+                            <input
+                                type="text"
+                                id="name"
+                                placeholder="Enter your full name"
+                                required>
+
+                        </div>
+
+
+
+                        <!-- STUDENT ID -->
+
+                        <div
+                            class="register-form-group">
+
+                            <label
+                                for="studentId">
+
+                                Student ID / Roll No.
+
+                            </label>
+
+
+                            <input
+                                type="text"
+                                id="studentId"
+                                placeholder="Enter your Student ID"
+                                required>
+
+                        </div>
+
+
+
+                        <!-- COURSE + YEAR -->
+
+                        <div
+                            class="register-form-row">
+
+
+                            <div
+                                class="register-form-group">
+
+                                <label
+                                    for="course">
+
+                                    Course
+
+                                </label>
+
+
+                                <input
+                                    type="text"
+                                    id="course"
+                                    placeholder="e.g. B.Tech CSE"
+                                    required>
+
+                            </div>
+
+
+
+                            <div
+                                class="register-form-group">
+
+                                <label
+                                    for="year">
+
+                                    Year
+
+                                </label>
+
+
+                                <input
+                                    type="text"
+                                    id="year"
+                                    placeholder="e.g. 1st Year"
+                                    required>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <!-- EMAIL -->
+
+                        <div
+                            class="register-form-group">
+
+                            <label
+                                for="email">
+
+                                Email Address
+
+                            </label>
+
+
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="Enter your email"
+                                required>
+
+                        </div>
+
+
+
+                        <!-- PASSWORD + CONFIRM -->
+
+                        <div
+                            class="register-form-row">
+
+
+                            <div
+                                class="register-form-group">
+
+
+                                <label
+                                    for="password">
+
+                                    Password
+
+                                </label>
+
+
+                                <div
+                                    class="register-password-wrapper">
+
+
+                                    <input
+                                        type="password"
+                                        id="password"
+                                        placeholder="Create password"
+                                        required>
+
+
+                                    <button
+                                        type="button"
+                                        class="password-toggle"
+                                        data-target="password"
+                                        aria-label="Show password">
+
+                                        👁️
+
+                                    </button>
+
+
+                                </div>
+
+
+                                <p
+                                    class="password-hint">
+
+                                    Minimum 6 characters
+
+                                </p>
+
+
+                            </div>
+
+
+
+                            <div
+                                class="register-form-group">
+
+
+                                <label
+                                    for="confirmPassword">
+
+                                    Confirm Password
+
+                                </label>
+
+
+                                <div
+                                    class="register-password-wrapper">
+
+
+                                    <input
+                                        type="password"
+                                        id="confirmPassword"
+                                        placeholder="Confirm password"
+                                        required>
+
+
+                                    <button
+                                        type="button"
+                                        class="password-toggle"
+                                        data-target="confirmPassword"
+                                        aria-label="Show password">
+
+                                        👁️
+
+                                    </button>
+
+
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <!-- MESSAGE -->
+
+                        <p id="message"></p>
+
+
+
+                        <!-- SUBMIT -->
+
+                        <button
+                            type="submit"
+                            class="register-submit">
+
+                            Create Student Account
+                            →
+                            
+                        </button>
+
+
+                    </form>
+
+
+
+                    <!-- LOGIN -->
+
+                    <div
+                        class="register-bottom">
+
+                        <span>
+
+                            Already have an account?
+
+                        </span>
+
+
+                        <a
+                            href="login.html">
+
+                            Student Login
+
+                        </a>
+
+                    </div>
+
+
+
+                    <!-- HOME -->
+
+                    <a
+                        href="index.html"
+                        class="register-back-home">
+
+                        ← Back to Home
+
+                    </a>
+
+
+                </div>
+
+
+            </section>
+
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         PASSWORD TOGGLE
+    ===================================================== -->
+
+    <script>
+
+        const passwordToggles =
+            document.querySelectorAll(
+                ".password-toggle"
+            );
+
+
+        passwordToggles.forEach(
+            function(button) {
+
+
+                button.addEventListener(
+                    "click",
+                    function() {
+
+
+                        const targetId =
+                            button.getAttribute(
+                                "data-target"
+                            );
+
+
+                        const input =
+                            document.getElementById(
+                                targetId
+                            );
+
+
+                        if (
+                            input.type ===
+                            "password"
+                        ) {
+
+                            input.type =
+                                "text";
+
+                            button.textContent =
+                                "🙈";
+
+                            button.setAttribute(
+                                "aria-label",
+                                "Hide password"
+                            );
+
+                        } else {
+
+                            input.type =
+                                "password";
+
+                            button.textContent =
+                                "👁️";
+
+                            button.setAttribute(
+                                "aria-label",
+                                "Show password"
+                            );
+
+                        }
+
+                    }
+                );
+
+
+            }
+        );
+
+    </script>
+
+
+
+    <!-- EXISTING FIREBASE REGISTRATION -->
+
+    <script
+        type="module"
+        src="script.js">
+    </script>
+
+
+</body>
+
+</html>

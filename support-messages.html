@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Support Messages | Digital Lab Entry
+    </title>
+
+    <link rel="stylesheet"
+        href="style.css">
+
+</head>
+
+
+<body class="admin-page">
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="admin-nav">
+
+        <div class="admin-logo">
+
+            <span>🧪</span>
+
+            Digital Lab Entry
+
+        </div>
+
+
+        <a href="admin.html"
+            class="admin-home">
+
+            ← Admin Dashboard
+
+        </a>
+
+    </nav>
+
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="admin-main">
+
+
+        <!-- Heading -->
+
+        <div class="admin-heading">
+
+            <span class="admin-badge">
+                ADMIN PORTAL
+            </span>
+
+
+            <h1>
+                Support Messages
+            </h1>
+
+
+            <p>
+                Review and manage queries submitted by students.
+            </p>
+
+        </div>
+
+
+
+        <!-- Summary -->
+
+        <section class="admin-card">
+
+
+            <div class="admin-card-header">
+
+                <div>
+
+                    <h2>
+                        Student Queries
+                    </h2>
+
+
+                    <p id="messageCount">
+                        Loading messages...
+                    </p>
+
+                </div>
+
+
+                <div class="admin-card-icon">
+                    💬
+                </div>
+
+            </div>
+
+
+            <!-- Filters -->
+
+            <div class="history-filters">
+
+                <button
+                    id="allButton"
+                    class="history-filter active">
+
+                    All
+
+                </button>
+
+
+                <button
+                    id="newButton"
+                    class="history-filter">
+
+                    🔴 New
+
+                </button>
+
+
+                <button
+                    id="resolvedButton"
+                    class="history-filter">
+
+                    🟢 Resolved
+
+                </button>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- Messages -->
+
+        <div id="messagesList">
+
+            <p class="admin-message">
+                Loading student queries...
+            </p>
+
+        </div>
+
+
+
+        <!-- Back -->
+
+        <a href="admin.html"
+            class="admin-back">
+
+            ← Back to Admin Dashboard
+
+        </a>
+
+
+    </main>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="admin-footer">
+
+        <p>
+            🧪 Digital Lab Entry
+        </p>
+
+
+        <p>
+            Smart Laboratory Entry Management System
+        </p>
+
+    </footer>
+
+
+
+    <script
+        type="module"
+        src="support-messages.js">
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+rules_version = '2';
+
+service cloud.firestore {
+
+  match /databases/{database}/documents {
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isAdmin() {
+      return isSignedIn()
+        && request.auth.token.email == "sagarpetwal372@gmail.com";
+    }
+
+
+    // =========================
+    // STUDENTS
+    // =========================
+
+    match /students/{studentId} {
+
+      // Student can create only their own profile
+      allow create:
+        if isSignedIn()
+        && request.resource.data.uid == request.auth.uid;
+
+
+      // Student can read own profile
+      // Admin can read all profiles
+      allow read:
+        if isAdmin()
+        || (
+          isSignedIn()
+          && resource.data.uid == request.auth.uid
+        );
+
+
+      // Student can update own profile
+      // Admin can update any profile
+      allow update:
+        if isAdmin()
+        || (
+          isSignedIn()
+          && resource.data.uid == request.auth.uid
+          && request.resource.data.uid == request.auth.uid
+        );
+
+
+      // Only admin can delete
+      allow delete:
+        if isAdmin();
+    }
+
+
+    // =========================
+    // LAB ENTRIES
+    // =========================
+
+    match /labEntries/{entryId} {
+
+      // Student can create only their own entry
+      allow create:
+        if isSignedIn()
+        && request.resource.data.uid == request.auth.uid;
+
+
+      // Student can read only their own entries
+      // Admin can read all entries
+      allow read:
+        if isAdmin()
+        || (
+          isSignedIn()
+          && resource.data.uid == request.auth.uid
+        );
+
+
+      // Student cannot modify entries
+      // Admin can modify/delete
+      allow update, delete:
+        if isAdmin();
+    }
+
+  }
+}

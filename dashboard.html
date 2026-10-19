@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Student Dashboard | Digital Lab Entry</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body class="student-dashboard">
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="dashboard-nav">
+
+        <div class="dashboard-logo">
+
+            <span>🧪</span>
+
+            Digital Lab Entry
+
+        </div>
+
+
+        <button
+            id="logoutButton"
+            class="nav-logout">
+
+            Logout
+
+        </button>
+
+    </nav>
+
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="dashboard-main">
+
+
+        <!-- ================= DASHBOARD HEADING ================= -->
+
+        <div class="dashboard-heading">
+
+            <span class="dashboard-badge">
+
+                STUDENT PORTAL
+
+            </span>
+
+
+            <h1>
+
+                Welcome back,
+                <span id="studentName">Student</span> 👋
+
+            </h1>
+
+
+            <p>
+
+                Manage your laboratory entries and
+                keep track of your activity.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- ================= STUDENT ACCOUNT ================= -->
+
+        <div class="top-account-card">
+
+
+            <div class="top-account-left">
+
+
+                <div class="top-account-icon">
+
+                    👨‍🎓
+
+                </div>
+
+
+                <div class="top-account-info">
+
+                    <h3>
+                        Student Account
+                    </h3>
+
+
+                    <p>
+                        Your account is securely connected
+                        and ready to use.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="top-account-actions">
+
+
+                <div class="account-status">
+
+                    <span class="status-dot"></span>
+
+                    Account Active
+
+                </div>
+
+
+
+                <button
+                    id="profileButton"
+                    class="profile-button">
+
+                    View Profile →
+
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- ================= QUICK STATS ================= -->
+
+        <section class="dashboard-stats">
+
+
+            <!-- TODAY -->
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+
+                    🚪
+
+                </div>
+
+
+                <div class="stat-content">
+
+                    <span>
+                        Today's Visits
+                    </span>
+
+
+                    <strong id="todayVisits">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- MONTH -->
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+
+                    📅
+
+                </div>
+
+
+                <div class="stat-content">
+
+                    <span>
+                        This Month
+                    </span>
+
+
+                    <strong id="monthVisits">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- TOTAL -->
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+
+                    📊
+
+                </div>
+
+
+                <div class="stat-content">
+
+                    <span>
+                        Total Visits
+                    </span>
+
+
+                    <strong id="totalVisits">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ================= LAB ENTRY ================= -->
+
+        <section class="entry-panel">
+
+
+            <div class="entry-icon">
+
+                🚪
+
+            </div>
+
+
+            <div class="entry-content">
+
+
+                <h2>
+
+                    Lab Entry
+
+                </h2>
+
+
+                <p>
+
+                    Ready to enter the laboratory?
+                    Record your entry with one click.
+
+                </p>
+
+
+                <button
+                    id="enterLabButton"
+                    class="enter-button">
+
+                    Enter Lab →
+
+                </button>
+
+
+                <p id="entryMessage"></p>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ================= RECENT ACTIVITY ================= -->
+
+        <section class="recent-activity">
+
+
+            <div class="recent-activity-header">
+
+
+                <div>
+
+                    <span class="dashboard-badge">
+
+                        RECENT ACTIVITY
+
+                    </span>
+
+
+                    <h2>
+
+                        Latest Lab Entry
+
+                    </h2>
+
+                </div>
+
+
+                <div class="recent-activity-icon">
+
+                    🕒
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="recent-entry-box">
+
+
+                <!-- DATE -->
+
+                <div class="recent-entry-item">
+
+                    <span>
+
+                        📅 Date
+
+                    </span>
+
+
+                    <strong id="recentEntryDate">
+
+                        No entry yet
+
+                    </strong>
+
+                </div>
+
+
+
+                <!-- TIME -->
+
+                <div class="recent-entry-item">
+
+                    <span>
+
+                        🕒 Entry Time
+
+                    </span>
+
+
+                    <strong id="recentEntryTime">
+
+                        —
+
+                    </strong>
+
+                </div>
+
+
+
+                <!-- STATUS -->
+
+                <div class="recent-entry-item">
+
+                    <span>
+
+                        ✓ Status
+
+                    </span>
+
+
+                    <strong id="recentEntryStatus">
+
+                        No recent activity
+
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ================= QUICK ACTIONS ================= -->
+
+        <section class="dashboard-section">
+
+
+            <h2 class="section-heading">
+
+                Quick Actions
+
+            </h2>
+
+
+
+            <div class="dashboard-cards">
+
+
+                <!-- ENTRY HISTORY -->
+
+                <div class="dashboard-card">
+
+
+                    <div class="dashboard-card-icon">
+
+                        📊
+
+                    </div>
+
+
+                    <h3>
+
+                        Entry History
+
+                    </h3>
+
+
+                    <p>
+
+                        View your previous laboratory
+                        entry records.
+
+                    </p>
+
+
+                    <button id="historyButton">
+
+                        View History →
+
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- ================= CONTACT US ================= -->
+
+            <div class="contact-support-card">
+
+
+                <div class="contact-support-icon">
+
+                    💬
+
+                </div>
+
+
+                <div class="contact-support-content">
+
+
+                    <h3>
+
+                        Contact Us
+
+                    </h3>
+
+
+                    <p>
+
+                        Have a query, doubt or problem?
+                        Contact our support team directly.
+
+                    </p>
+
+
+                </div>
+
+
+                <button
+                    class="contact-support-button"
+                    onclick="window.location.href='contact.html'">
+
+                    Contact Support →
+
+                </button>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ================= BACK HOME ================= -->
+
+        <a
+            href="index.html"
+            class="dashboard-home">
+
+            ← Back to Home
+
+        </a>
+
+
+    </main>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="dashboard-footer">
+
+
+        <p>
+
+            🧪 Digital Lab Entry
+
+        </p>
+
+
+        <p>
+
+            Smart Laboratory Entry Management System
+
+        </p>
+
+
+    </footer>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script
+        type="module"
+        src="dashboard.js">
+    </script>
+
+
+</body>
+
+</html>

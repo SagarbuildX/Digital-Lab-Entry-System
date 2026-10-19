@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard | Digital Lab Entry</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="admin-page">
+
+    <nav class="admin-nav">
+
+        <div class="admin-logo">
+            <span>🧪</span>
+            Digital Lab Entry
+        </div>
+
+    </nav>
+
+
+    <main class="admin-main">
+
+        <!-- Page Heading -->
+
+        <div class="admin-heading">
+
+            <span class="admin-badge">
+                ADMIN PORTAL
+            </span>
+
+            <h1>
+                Admin Dashboard
+            </h1>
+
+            <p>
+                Manage laboratory entries and registered students.
+            </p>
+
+        </div>
+
+
+        <!-- Entry History -->
+
+        <section class="admin-card">
+
+            <div class="admin-card-header">
+
+                <div>
+
+                    <h2>
+                        Entry History
+                    </h2>
+
+                    <p>
+                        View laboratory entries by date, week or month.
+                    </p>
+
+                </div>
+
+
+                <div class="admin-card-icon">
+                    📅
+                </div>
+
+            </div>
+
+
+            <!-- History Filters -->
+
+            <div class="history-filters">
+
+                <button
+                    id="todayButton"
+                    class="history-filter active">
+
+                    Today
+
+                </button>
+
+
+                <button
+                    id="yesterdayButton"
+                    class="history-filter">
+
+                    Yesterday
+
+                </button>
+
+
+                <button
+                    id="weekButton"
+                    class="history-filter">
+
+                    This Week
+
+                </button>
+
+
+                <button
+                    id="monthButton"
+                    class="history-filter">
+
+                    This Month
+
+                </button>
+
+            </div>
+
+
+            <!-- Specific Date -->
+
+            <div class="date-selector">
+
+                <label for="datePicker">
+                    Select Specific Date
+                </label>
+
+
+                <input
+                    type="date"
+                    id="datePicker">
+
+
+                <button
+                    id="dateButton"
+                    class="admin-secondary-button">
+
+                    View Date →
+
+                </button>
+
+            </div>
+
+
+            <p id="adminMessage">
+                Click a filter to view entry records.
+            </p>
+
+        </section>
+
+
+        <!-- Historical Entries -->
+
+        <div id="entriesList"></div>
+
+
+<!-- =========================
+     SUPPORT MESSAGES
+========================= -->
+
+<section class="admin-card">
+
+    <div class="admin-card-header">
+
+        <div>
+
+            <h2>
+                Support Messages
+            </h2>
+
+            <p>
+                View and manage queries submitted by students.
+            </p>
+
+        </div>
+
+
+        <div class="admin-card-icon">
+            💬
+        </div>
+
+    </div>
+
+
+    <button
+        class="admin-secondary-button"
+        onclick="window.location.href='support-messages.html'">
+
+        View Student Queries →
+
+    </button>
+
+</section>
+
+
+
+
+
+
+
+        <!-- Student Management -->
+
+        <section class="admin-card">
+
+            <div class="admin-card-header">
+
+                <div>
+
+                    <h2>
+                        Student Management
+                    </h2>
+
+                    <p>
+                        View all registered students and their details.
+                    </p>
+
+                </div>
+
+
+                <div class="admin-card-icon">
+                    👨‍🎓
+                </div>
+
+            </div>
+
+
+            <button
+                class="admin-secondary-button"
+                onclick="window.location.href='students.html'">
+
+                Registered Students →
+
+            </button>
+
+        </section>
+
+
+        <!-- Bottom Navigation -->
+
+        <a
+            href="index.html"
+            class="admin-back">
+
+            ← Back to Home
+
+        </a>
+
+
+        <button
+            id="logoutButton"
+            class="admin-logout">
+
+            Logout
+
+        </button>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer class="admin-footer">
+
+        <p>
+            🧪 Digital Lab Entry
+        </p>
+
+        <p>
+            Smart Laboratory Entry Management System
+        </p>
+
+    </footer>
+
+
+    <script
+        type="module"
+        src="admin.js">
+    </script>
+
+</body>
+
+</html>
